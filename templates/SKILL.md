@@ -18,3 +18,7 @@ Describe the task this skill helps an agent complete.
 ## Output
 
 Describe the expected deliverable and any important constraints.
+
+## Final Reflection
+
+After completing the task, briefly evaluate how effectively this skill supported the actual work. Identify any ambiguity, omission, or inefficiency; recommend changes to these instructions, supporting references or scripts, and useful existing or new tools. If no improvement is warranted, say so explicitly. Surface recommendations for human review; never change the canonical skill automatically as a result of this reflection.
