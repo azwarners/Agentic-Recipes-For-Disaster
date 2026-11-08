@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 # Authoring skills
 
 Place each skill in `skills/<category>/<skill-name>/SKILL.md`. Choose the category that best matches the skill's primary workflow. If no category fits, propose a concise lowercase kebab-case category rather than placing skills directly in `skills/`. Keep skill directory names short, descriptive, and lowercase kebab-case.

@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 ---
 name: example-skill
 description: Describe what this skill does and the situations in which an agent should use it.

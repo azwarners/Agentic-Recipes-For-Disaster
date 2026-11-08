@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 # Agentic Recipes for Disaster
 
 A collection of focused agent skills, each documented by a `SKILL.md` file. Skills are grouped by domain for navigation and can include supporting scripts, references, and assets when needed. Compatible agent runtimes should discover skills by their declared name, description, and path; they should not limit discovery to the category matching the current task.
