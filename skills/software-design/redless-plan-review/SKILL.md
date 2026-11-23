@@ -24,6 +24,22 @@ Determine and verify the repository's **actual label names and selection behavio
 
 On approved publication, explicitly apply `planned` and `approved` to each **approved executable implementation issue**; set **exactly one** of `ready` or `blocked` as supported. When a parent is decomposed into children, mark the parent `planned`, link its children, and avoid leaving the parent eligible for duplicate implementation; distinguish summary parent from executable children. Do not mark rejected or merely assessed work `approved`. If a required label is missing, find the established equivalent or report the gap; never silently invent one.
 
+## Assessment invalidation and return to queue
+
+An assessment is a snapshot of its issue and the architecture at the time it was written. A later architectural decision, changed dependency, or material scope change can make it obsolete even when the assessment was correctly completed. Do **not** implement from an invalidated assessment or treat its old approval as continuing authorization.
+
+When review discovers a material invalidation:
+
+1. Identify the specific superseding decision and exactly which assumptions, tasks, or acceptance criteria are now wrong. Distinguish minor reviewer-correctable improvements from a genuinely obsolete assessment.
+2. Propose an amendment to the **original parent issue's body** that describes the current requirements, architectural dependency or blocker, links to the superseding issues/decisions, and the assessment's historical status. Replace obsolete instructions rather than appending contradictory requirements indefinitely. Preserve the earlier assessment artifact, comments, and links as history.
+3. **After explicit human approval for those GitHub changes**, update the issue and remove its `planned` label so the established assessment queue can discover it again. If `approved` is present, remove it too: approval of the obsolete plan must not survive. If those labels are already absent, no removal is necessary. **Do not invent an `unplanned` or `reassessment-needed` label.**
+4. Keep `ready` when reassessment can proceed. Use `blocked` instead only for a concrete impediment to the **next intended operation**; an implementation dependency alone does not automatically block *assessment*. Never leave `ready` and `blocked` together. Preserve unrelated labels, priorities, and history.
+5. Verify the current runner's actual assessment-selection filter before claiming the issue is queued again. The intended convention is that an eligible `ready` issue without `planned` is available for assessment, but do not assume the script implements it. If the selector differs or is unavailable, report this explicitly.
+6. Decide whether a revised plan can be responsibly completed in this human review or whether fresh model assessment is warranted. Avoid needless CPU reassessment when the reviewer already has adequate evidence. When returning an issue to the queue, document why a new assessment is needed.
+7. Read back the edited issue and its labels; confirm the old implementation authorization was cleared, the revised requirements are coherent, and the historical assessment was preserved. Never claim the new assessment or implementation is complete merely because the issue was relabeled.
+
+**Approval boundary:** recognizing and recommending invalidation is part of review, but changing the parent body or labels requires explicit human authorization. An approval to amend/return an issue for assessment does **not** approve any revised implementation plan.
+
 ## Review workflow
 
 1. **Gather evidence.** Read the original GitHub issue, complete assessment, source revision, relevant code, architecture, conventions, linked issues, and comments. Check current repository state where possible; note differences from the assessment snapshot. Separate verified facts, assumptions, missing information, and speculation. When access is limited, continue provisionally but say what could not be checked.
